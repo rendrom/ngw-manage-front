@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <a-button type="primary"> Primary </a-button>
+    <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
+    <el-button>Default</el-button>
   </div>
 </template>
 

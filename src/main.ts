@@ -1,12 +1,13 @@
 import { createApp } from 'vue';
-import { Button, Form } from 'ant-design-vue';
 import App from './App.vue';
+import { setupElement } from './plugins/element';
 import router from './router';
 import store from './store';
 
-createApp(App)
+const app = createApp(App)
   .use(store)
-  .use(router)
-  .use(Button)
-  .use(Form)
-  .mount('#app');
+  .use(router);
+
+setupElement(app);
+
+app.mount('#app');
