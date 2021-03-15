@@ -1,23 +1,32 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
-import Home from '../views/Home.vue';
-import Login from '../views/Login.vue';
+import { createRouter, createWebHistory } from 'vue-router';
+import { constantRoutes } from './routes';
 
-const routes: Array<RouteRecordRaw> = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/login',
-    name: 'Login',
-    component: Login
-  }
-];
+export const ROUTE_WHITE_LIST: string[] = [];
 
+/**
+ * Create router
+ */
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
+  history: createWebHistory(),
+  routes: constantRoutes,
+  strict: true,
+  scrollBehavior: () => ({ left: 0, top: 0 }),
 });
+
+/**
+ * Reset router
+ */
+export function resetRouter(): void {
+  router.getRoutes().forEach((route) => {
+    const name = route.name as string;
+
+    if (name && !ROUTE_WHITE_LIST.includes(name)) {
+      router.hasRoute(name) && router.removeRoute(name);
+    }
+    constantRoutes.forEach((x) => {
+      router.addRoute(x);
+    });
+  });
+}
 
 export default router;

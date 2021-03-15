@@ -1,7 +1,6 @@
 <template>
-  <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
-    <el-button>Default</el-button>
+  <div class="app-container">
+    <h1>404 not found</h1>
   </div>
 </template>
 
@@ -9,6 +8,6 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  components: {}
+  name: 'NotFound',
 });
 </script>

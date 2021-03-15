@@ -1,0 +1,16 @@
+
+[submodule "prj/nextgis_common"]
+	path = prj/nextgis_common
+	url = https://github.com/nextgis/webservices_commons
+[submodule "prj/frontend/@nextgis"]
+	path = prj/frontend/@nextgis
+	url = https://github.com/nextgis/nextgis_frontend
+[submodule "prj/frontend/@nextgis_misc"]
+	path = prj/frontend/@nextgis_misc
+	url = https://github.com/nextgis/nextgis_frontend_misc.git
+[submodule "prj/sense-front/@nextgis-misc"]
+	path = prj/sense-front/@nextgis-misc
+	url = https://github.com/nextgis/nextgis_frontend_misc.git
+[submodule "@nextgis-misc"]
+	path = @nextgis-misc
+	url = https://github.com/nextgis/nextgis_frontend_misc.git

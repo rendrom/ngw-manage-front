@@ -1,13 +1,25 @@
 import { createApp } from 'vue';
-import App from './App.vue';
-import { setupElement } from './plugins/element';
-import router from './router';
-import store from './store';
+import i18n from '@/i18n';
+import store from '@/store';
+import router from '@/router';
+import '@/router/guard';
+import icons from '@/icons';
+import { installMdi } from '@/plugins/mdi';
+import { installElementPlus } from '@/plugins/element';
 
-const app = createApp(App)
-  .use(store)
-  .use(router);
+import App from '@/App.vue';
 
-setupElement(app);
+import '@/styles/style.scss';
 
-app.mount('#app');
+const app = createApp(App);
+
+app.use(store);
+app.use(router);
+app.use(i18n);
+app.use(icons);
+
+
+installMdi(app);
+installElementPlus(app);
+
+router.isReady().then(() => app.mount('#app'));

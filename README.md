@@ -1,21 +1,43 @@
-# ngw-manage-front
+# sense-front
 
-## Project setup
+Based on:
+
+https://github.com/ntnyq/element-plus-admin and https://github.com/PanJiaChen/vue-element-admin
+
+## Installation
 
 ```bash
-npm install
+cd ./prj/frontend
+npm i
+npm run prod
 ```
 
-### Compiles and hot-reloads for development
+run developer server with hot reload
 
 ```bash
-npm run serve
+npm start
 ```
 
-### Compiles and minifies for production
+then open [http://localhost:8000](http://localhost:8000)
+
+### Docker
+
+Build image
 
 ```bash
-npm run build
+docker build -t registry.nextgis.com/sense_service:latest . -f .\docker\Dockerfile
+```
+
+Run image on [http://localhost:8000](http://localhost:8000)
+
+```bash
+docker-compose -f ./docker/docker-compose.local.yaml up
+```
+
+Upload image to NextGIS registry
+
+```bash
+docker push registry.nextgis.com/sense_service:latest
 ```
 
 ### Lints and fixes files

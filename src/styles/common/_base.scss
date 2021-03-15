@@ -1,0 +1,39 @@
+/* Styles - base */
+
+body,
+input,
+button,
+textarea,
+select,
+option {
+  font: normal $font-size $font;
+}
+
+body {
+  position: relative;
+  line-height: $line-height;
+  overflow-x: hidden;
+}
+
+:focus {
+  outline: none;
+}
+
+// type="text"
+input::-ms-clear {
+  display: none;
+}
+
+// type="password"
+input::-ms-reveal {
+  display: none;
+}
+
+#app,
+.app-wrapper,
+html,
+body {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
